@@ -4,8 +4,8 @@ public class Employee {
     private final String fullName;
     private int department;
     private double salary;
-    public static int idCounter = 0;
-    private int id = idCounter++;
+    private static int idCounter = 1;
+    private final int id;
 
     public String getFullName() {
         return fullName;
@@ -35,7 +35,7 @@ public class Employee {
         this.fullName = fullName;
         this.department = department;
         this.salary = salary;
-        this.id = idCounter;
+        this.id = idCounter++;
     }
 
     @Override

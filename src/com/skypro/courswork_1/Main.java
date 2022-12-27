@@ -1,7 +1,7 @@
 package com.skypro.courswork_1;
 
 public class Main {
-    private static final Employee[] employees = {
+    private static final Employee[] EMPLOYEES = {
             new Employee("Некрасов Николай Алекеевич", 1, 54000f),
             new Employee("Булгаков Михаил Афанасьевич", 2, 55000f),
             new Employee("Чехов Антон Павлович", 3, 56000f),
@@ -15,27 +15,27 @@ public class Main {
     };
 
     public static void printListOfAllEmployees() { //список всех сотрудников со всеми данными
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        for (int i = 0; i < EMPLOYEES.length; i++) {
+            Employee employee = EMPLOYEES[i];
             System.out.println(employee);
         }
     }
 
     public static void printFullNameAllEmployees() { //список Ф.И.О. всех сотрудников
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
+        for (int i = 0; i < EMPLOYEES.length; i++) {
+            Employee employee = EMPLOYEES[i];
             System.out.println(employee.getFullName());
         }
     }
 
     public static Employee findEmployeeWithMinSalary() { //поиск сотрудника с минимальной зарплатой
 
-        Employee value = employees[0];
-        double minSalary = employees[0].getSalary();
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
-            if (employees[i].getSalary() < minSalary) {
-                minSalary = employees[i].getSalary();
+        Employee value = EMPLOYEES[0];
+        double minSalary = EMPLOYEES[0].getSalary();
+        for (int i = 0; i < EMPLOYEES.length; i++) {
+            Employee employee = EMPLOYEES[i];
+            if (EMPLOYEES[i].getSalary() < minSalary) {
+                minSalary = EMPLOYEES[i].getSalary();
                 value = employee;
             }
         }
@@ -43,23 +43,23 @@ public class Main {
     }
 
     public static double findAverageSalaryAllEmployees() { //подсчет среднего значения зарплат
-        return sumSalaryAllEmployees() / employees.length;
+        return sumSalaryAllEmployees() / EMPLOYEES.length;
     }
 
     public static double sumSalaryAllEmployees() { //подсчет суммы всех зарплат
         double sum = 0;
-        for (Employee employee : employees) {
+        for (Employee employee : EMPLOYEES) {
             sum += employee.getSalary();
         }
         return sum;
     }
 
     public static Employee findEmployeeWithMaxSalary() { //поиск сотрудника с максимальной зарплатой
-        Employee value = employees[0];
-        double maxSalary = employees[0].getSalary();
-        for (int i = 0; i < employees.length; i++) {
-            Employee employee = employees[i];
-            if (employees[i].getSalary() > maxSalary) {
+        Employee value = EMPLOYEES[0];
+        double maxSalary = EMPLOYEES[0].getSalary();
+        for (int i = 0; i < EMPLOYEES.length; i++) {
+            Employee employee = EMPLOYEES[i];
+            if (EMPLOYEES[i].getSalary() > maxSalary) {
                 maxSalary = employee.getSalary();
                 value = employee;
             }
